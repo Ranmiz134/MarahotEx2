@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#include "my_mat.h"
 
 #define NUM_ITEMS 5
 #define MAX_ITEM 20
@@ -31,11 +30,6 @@ int main() {
     getItems(items, weights, values);
     max_value = knapSack(weights, values, selected_bool);
     printf("Maximum value that can be carried: %d\n", max_value);
-    for (i = 0; i < NUM_ITEMS; i++) 
-    {
-        printf("%d ", selected_bool[i]);
-    }
-    printf("\n");
 
     fillResult(selected_bool, result, items);
 

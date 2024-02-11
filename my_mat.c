@@ -13,36 +13,48 @@ void getMatrix(int mat[SIZE][SIZE])
         for (j = 0; j < SIZE; j++) 
         {
             scanf("%d", &mat[i][j]);
+            printf("V");
         }
     }
 }
 
-// Function to check if there is a path from vertex i to vertex j
-int isPathExists(int mat[SIZE][SIZE], int i, int j, int visited[]) 
+//Helper function check if there is a path from vertex i to vertex j
+int isPathExistsHelper(int mat[SIZE][SIZE], int i, int j, int visited[]) 
 {
-    int flag;
-    if (i < 0 || i >= SIZE || j < 0 || j >= SIZE || i == j) 
+    if (i == j) 
     {
-        return FALSE; // Out of bounds
+        return FALSE;
     }
-
+    visited[i] = TRUE;
     if (mat[i][j] != 0) 
     {
-        return TRUE; // There is a path from i to j
+        return TRUE;
     }
-
-     visited[i] = TRUE; // Mark vertex i as visited
-
     for (int k = 0; k < SIZE; k++) 
     {
-        flag = isPathExists(mat, k, j, visited);
-        if (mat[i][k] != 0 && !visited[k] && flag) 
+        if (mat[i][k] != 0 && !visited[k]) 
         {
-            return TRUE;
+            if (isPathExistsHelper(mat, k, j, visited)) 
+            {
+                return 1;
+            }
         }
     }
 
-    return FALSE; // No path found from i to j
+    //if no path found from i to j
+    return FALSE;
+}
+
+//Function to check if there is a path from vertex i to vertex j
+int isPathExists(int mat[SIZE][SIZE], int i, int j) 
+{
+    if (i < 0 || i >= SIZE || j < 0 || j >= SIZE) 
+    {
+        return FALSE; 
+    }
+    int visited[SIZE] = {0};
+
+    return isPathExistsHelper(mat, i, j, visited);
 }
 
 // Function to find the vertex with the minimum distance value

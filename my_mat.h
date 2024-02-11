@@ -11,9 +11,6 @@
 //The function to read the matrix from the user
 void getMatrix(int[SIZE][SIZE]);
 
-//The function check if there is a path from vertex i to vertex j, if there is return 1 (true), else return 0 (false)
-int isPathExists(int[SIZE][SIZE], int, int, int[]); 
-
 //The function print the shortest path matrix
 void printShortestPaths(int[SIZE][SIZE]);
 
@@ -22,3 +19,8 @@ void dijkstra(int[][SIZE], int, int);
 
 // Function to find the vertex with the minimum distance value
 int minDistance(int[], int[]);
+
+//The function check if there is a path from vertex i to vertex j, if there is return 1 (true), else return 0 (false)
+int isPathExists(int mat[SIZE][SIZE], int i, int j);
+
+int isPathExistsHelper(int mat[SIZE][SIZE], int i, int j, int visited[]);

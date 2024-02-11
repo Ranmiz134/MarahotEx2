@@ -4,23 +4,24 @@
 #include <stdio.h>
 #include "my_mat.h"
 
-int my_graph() {
+int main() {
     char choice;
     int i, j, tf;
-    int graph[MAX_SIZE][MAX_SIZE];
+    int mat[SIZE][SIZE];
+    //int graph[MAX_SIZE][MAX_SIZE];
 
     do {
         scanf(" %c", &choice);
 
         switch (choice) { 
             case 'A':
-                int mat[SIZE][SIZE];
                 getMatrix(mat);
+                printf("done");
                 break;
             case 'B':
                 scanf("%d %d", &i, &j);
-                int arr[SIZE];
-                tf = isPathExists(mat, i, j, arr);
+                //int arr[SIZE];
+                tf = isPathExists(mat, i, j);
                 if (tf == 1)
                 {
                     printf("True\n");
@@ -35,7 +36,6 @@ int my_graph() {
                 dijkstra(mat, i, j);
                 break;
             case 'D':
-            case EOF:
                 return 0;
             default:
                 break;
