@@ -33,10 +33,10 @@ int main() {
 
     fillResult(selected_bool, result, items);
 
-    printf("Selected items: ");
+    printf("Selected items:");
     for (i = 0; i < NUM_ITEMS; i++) 
     {
-        printf("%s ", result[i]);
+        printf(" %s", result[i]);
     }
 
     return 0;
