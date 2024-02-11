@@ -30,5 +30,5 @@ my_graph.o: my_graph.c my_mat.h
 
 .PHONY: clean all
 
-make clean:
+clean:
 	rm -f *.o *.a my_graph my_knapsack
