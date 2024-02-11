@@ -21,6 +21,6 @@ void dijkstra(int[][SIZE], int, int);
 int minDistance(int[], int[]);
 
 //The function check if there is a path from vertex i to vertex j, if there is return 1 (true), else return 0 (false)
-int isPathExists(int mat[SIZE][SIZE], int i, int j);
+int isPathExists(int[SIZE][SIZE], int, int);
 
-int isPathExistsHelper(int mat[SIZE][SIZE], int i, int j, int visited[]);
+int isPathExistsHelper(int[SIZE][SIZE], int, int, int[]);

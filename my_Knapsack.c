@@ -19,7 +19,7 @@ void fillSelected(int[][CAPACITY + 1], int[], int[], int[]);
 
 void fillResult(int[], char[][MAX_ITEM], char[][MAX_ITEM]);
 
-int howManyItems (int selected_bool[NUM_ITEMS]);
+int howManyItems (int[NUM_ITEMS]);
 
 
 int main() {
