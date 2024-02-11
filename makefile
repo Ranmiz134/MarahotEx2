@@ -11,8 +11,7 @@ OBJECTS_MAT=my_mat.o
 FLAGS= -Wall -g
 
 all: my_mat.a my_graph my_knapsack.a my_knapsack
-my_knapsack: my_knapsack.a
-my_graph: my_mat.a
+run: my_knapsack.a my_mat.a
 
 my_mat.a: $(OBJECTS_MAT)
 	$(AR) -rcs my_mat.a $(OBJECTS_MAT)
