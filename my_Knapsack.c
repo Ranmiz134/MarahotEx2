@@ -19,13 +19,15 @@ void fillSelected(int[][CAPACITY + 1], int[], int[], int[]);
 
 void fillResult(int[], char[][MAX_ITEM], char[][MAX_ITEM]);
 
+int howManyItems (int selected_bool[NUM_ITEMS]);
+
 
 int main() {
     char items[NUM_ITEMS][MAX_ITEM];
     char result[NUM_ITEMS][MAX_ITEM];
     int weights[NUM_ITEMS], values[NUM_ITEMS];
     int selected_bool[NUM_ITEMS] = {0};
-    int i, max_value;
+    int i, max_value, n;
 
     getItems(items, weights, values);
     max_value = knapSack(weights, values, selected_bool);
@@ -33,13 +35,28 @@ int main() {
 
     fillResult(selected_bool, result, items);
 
+    n = howManyItems(selected_bool);
     printf("\nSelected items:");
-    for (i = 0; i < NUM_ITEMS; i++) 
+    for (i = 0; i < n; i++) 
     {
         printf(" %s", result[i]);
     }
 
     return 0;
+}
+
+int howManyItems (int selected_bool[NUM_ITEMS])
+{
+    int count = 0, i;
+    for (i = 0; i < NUM_ITEMS; i++)
+    {
+        if (selected_bool[i])
+        {
+            count++;
+        }
+    }
+    
+    return count;
 }
 
 /**
