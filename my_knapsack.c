@@ -38,7 +38,6 @@ int main() {
     {
         printf("%s ", result[i]);
     }
-    printf("\n");
 
     return 0;
 }
