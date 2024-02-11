@@ -8,7 +8,6 @@ int main() {
     char choice;
     int i, j, tf;
     int mat[SIZE][SIZE];
-    //int graph[MAX_SIZE][MAX_SIZE];
 
     do {
         scanf(" %c", &choice);
@@ -16,11 +15,9 @@ int main() {
         switch (choice) { 
             case 'A':
                 getMatrix(mat);
-                printf("done");
                 break;
             case 'B':
                 scanf("%d %d", &i, &j);
-                //int arr[SIZE];
                 tf = isPathExists(mat, i, j);
                 if (tf == 1)
                 {

@@ -13,7 +13,6 @@ void getMatrix(int mat[SIZE][SIZE])
         for (j = 0; j < SIZE; j++) 
         {
             scanf("%d", &mat[i][j]);
-            printf("V");
         }
     }
 }

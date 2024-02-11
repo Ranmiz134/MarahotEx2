@@ -29,7 +29,7 @@ int main() {
 
     getItems(items, weights, values);
     max_value = knapSack(weights, values, selected_bool);
-    printf("Maximum value that can be carried: %d\n", max_value);
+    printf("Maximum profit: %d\n", max_value);
 
     fillResult(selected_bool, result, items);
 
