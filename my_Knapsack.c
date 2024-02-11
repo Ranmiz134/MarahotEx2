@@ -29,11 +29,11 @@ int main() {
 
     getItems(items, weights, values);
     max_value = knapSack(weights, values, selected_bool);
-    printf("Maximum profit: %d\n", max_value);
+    printf("Maximum profit: %d", max_value);
 
     fillResult(selected_bool, result, items);
 
-    printf("Selected items:");
+    printf("\nSelected items:");
     for (i = 0; i < NUM_ITEMS; i++) 
     {
         printf(" %s", result[i]);
